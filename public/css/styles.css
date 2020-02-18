@@ -1,7 +1,7 @@
 body{
     font-family: 'Montserrat', Helvetica, Arial, sans-serif !important;
     color: #2B2A29;
-    background-color: rgba(243, 244, 255, 0.2);
+    /*background-color: rgba(243, 244, 255, 0.2);*/
 }
 h1{
     font-size: 3.9375rem!important;   /* 63px Bold */
@@ -19,7 +19,7 @@ h3{
     line-height: 3rem!important;
 }
 p{
-    font-size: 1.5rem!important; /* 24px Light */
+    font-size: 1.25rem!important; /* 24px Light */
     font-weight: 300!important;
     line-height: 2.4375rem!important;
     padding:0;
@@ -68,6 +68,9 @@ form input, textarea{
     border-color: #00a9e4;
     border-width: 1px;
     border-style: solid;
+}
+.bd-white{
+    border: solid 1px white;
 }
 .bd-gray{
     border-color: rgba(110, 109, 172, 0.35);
@@ -119,6 +122,14 @@ form input, textarea{
     
 }
 
+/*
+
+NAV
+
+*/
+.img-nav{
+    max-width: 50%;
+}
 
 /*
 
@@ -151,6 +162,9 @@ FOOTER
     p{
         font-size: 1rem!important;
         line-height: 1.6875rem!important;
+    }
+    .img-nav{
+        max-width: 75%;
     }
     .title{
         text-align: center;

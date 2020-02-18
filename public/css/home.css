@@ -13,6 +13,18 @@ TITULO
 .img-title{
     max-width: 75%;
 }
+.title-anim{
+    animation-name: init;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,.86,.48,1.02);
+}
+.title-img-anim{
+    animation-name: initimg;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,.86,.48,1.02);
+}
 
 /*
 
@@ -20,15 +32,13 @@ MARCAS
 
 */
 
-.marcas-container{
-    margin-top: 5rem;
-}
+
 .img-marca{
     max-width: 50%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    filter: grayscale(70%);
+    filter: grayscale(50%);
 }
 
 /*
@@ -37,8 +47,16 @@ NOSOTROS
 
 */
 
-.map-wrapper iframe{
+iframe{
     width: 100%;
+}
+
+.nosotros-container, .contacto-container, .servicios-container{
+    padding: 0;
+}
+.nosotros-title{
+    transform: translateX(-400px);
+    opacity: 0;
 }
 /*
 
@@ -67,18 +85,77 @@ CONTACTO
 }
 
 .success-none{
-    display: none;
+    animation: disappear 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
 }
-@media screen and (min-width: 992px){
-    .form{
-        max-width: 50%;
+
+#contact{
+    transform: translateX(-400px);
+    opacity: 0;
+}
+.appear{
+    animation: appear 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,.86,.48,1.02);
+}
+@keyframes init{
+    0%{
+        opacity: 0%;
+        transform: translateX(300px);
     }
-    .nosotros-container{
-        padding-top: 5rem!important;
+    100%{
+        opacity: 100%;
+        transform: translateX(0px);
+
+    }
+}
+@keyframes initimg{
+    0%{
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateX(0px);
+    }
+}
+@keyframes appear{
+    0%{
+        
+    }
+    100%{
+        opacity: 100%;
+        transform: translateX(0px);
+    }
+
+}
+@keyframes disappear{
+    0%{
+
+    }
+    100% {
+        opacity: 0;
+        
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 769px){
+    .container{
+        padding-top: 2.5rem!important;
+        padding-bottom: 2.5rem!important;
+    }
+    .nosotros-container, .title-container{
+        padding-bottom: 4rem!important;
+    }
+    .servicios-container{
+        padding-bottom: 3.5rem!important;
     }
 }
 @media screen and (max-width: 768px){
-
+    
     .img-col{
         margin-top: 1rem;
         margin-bottom: 1rem;
@@ -92,10 +169,57 @@ CONTACTO
     .title-cta{
         text-align: center;
     }
+    
     .img-marca{
         max-width: 100%;
     }
     .contact-success{
         width: 80vw;
     }
+    .container{
+        padding-top: 1.5rem!important;
+        padding-bottom: 1.5rem!important;
+    }
+    .nosotros-container, .title-container{
+        padding-bottom: 3rem!important;
+    }
+    .nosotros-container{
+        padding-top: 3rem!important;
+    }
+    .servicios-container{
+        padding-bottom: 2rem!important;
+    }
+
+    .blue-building{
+        max-width: 60%;
+    }
+    .contact-info-col{
+        padding-top: 2rem;
+    }
+
+    @keyframes init{
+        0%{
+            transform: scaleX(2);
+            transform: scaleY(2);
+            opacity: 0%;
+            transform: translatey(200px);
+        }
+        100%{
+            opacity: 100%;
+            transform: translatey(0px);
+            transform: scaleX(1);
+            transform: scaleY(1);
+        }
+    }
+    @keyframes initimg{
+        0%{
+            opacity: 0;
+            transform: translatey(-200px);
+        }
+        100%{
+            opacity: 100%;
+            transform: translatey(0px);
+        }
+    }
 }
+
