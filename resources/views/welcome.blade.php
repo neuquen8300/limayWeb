@@ -158,16 +158,18 @@
     <footer class='container-fluid py-4 bg-white'>
         <div class="row">
             <div class="col-12 col-md-4 d-flex order-2 order-md-1">
-                <form action="" class='py-2'>
+                
+                <form action="/suscribe" method="POST" class='py-2'>
+                @csrf
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 px-0 m-0">
-                                <label for="newsletter">
+                                <label for="email">
                                     <p class='semibold'>No te pierdas las noticias!</p>
                                 </label>
                             </div>
                             <div class="col-12 px-0 pb-3">
-                                <input class='w-100 bd-blue' type="email" name="newsletter" id="newsletter" placeholder="Tu email">
+                                <input class='w-100 bd-blue' type="email" name="email" id="email" placeholder="Tu email">
                             </div>
                             <div class="col-12 px-0">
                                 <button type="submit" class="btn shadow-btn bg-blue white">SUSCRIBIRSE</button>
@@ -206,8 +208,9 @@
                             <div class="col-12 p-0">
                                 <p>Gracias por tu mensaje! Enseguida nos comunicamos con vos.</p>
                             </div>
-                            @csrf
-                        <form class='mx-auto' action="">
+                            
+                        <form class='mx-auto' action="/suscribe" method="POST">
+                        @csrf    
                             <div class="col-12 px-0 m-0">
                                 <label for="newsletter">
                                     <p class='semibold'>No te pierdas las noticias!</p>

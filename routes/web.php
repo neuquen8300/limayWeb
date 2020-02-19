@@ -12,6 +12,8 @@
 */
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SuscribeController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,3 +25,4 @@ Route::get('/servicios', function () {
 
 Route::post('/contact', 'ContactController@contactSaveData');
 
+Route::post('/suscribe', 'SuscribeController@SuscribeSaveData');
