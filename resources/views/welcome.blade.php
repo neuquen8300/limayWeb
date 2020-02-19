@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Limay S.A.- Inicio</title>
+        <title>Limay S.A.S. - Inicio</title>
 
         <!-- Fonts -->
         
@@ -105,10 +105,10 @@
                 
             </div>
             <div class="col-12 col-md-6 contact-info-col">
-                <h3 class='py-2'>Limay S.A.</h3>
+                <h3 class='py-2'>Limay S.A.S.</h3>
                 <p class='semibold'>Dirección: <span class='light'>Linares 1578</span></p>
                 <p class='semibold'>Horarios: <span class='light'>Lunes a Sábados: 8hs a 14hs</span>
-                <p class='semibold pb-4'>Teléfono: <span class='light'>299 - 0303456</span></p>
+                <p class='semibold pb-4'>Teléfono: <span class='light'>299 - 5176476</span></p>
                 <a class='btn shadow-btn white bg-blue' href="tel:2990303456">LLAMAR</a> 
             </div>
         </div>
@@ -206,6 +206,7 @@
                             <div class="col-12 p-0">
                                 <p>Gracias por tu mensaje! Enseguida nos comunicamos con vos.</p>
                             </div>
+                            @csrf
                         <form class='mx-auto' action="">
                             <div class="col-12 px-0 m-0">
                                 <label for="newsletter">
@@ -215,10 +216,14 @@
                             <div class="col-12 px-0 pb-3">
                                 <input class='bd-blue' type="email" name="newsletter" id="newsletter" placeholder="Tu email">
                             </div>
-                            <div class="col-12 px-0">
-                                <button id='success-btn' type="submit" class="btn shadow-btn bg-blue white">SUSCRIBIRSE</button>
+                            <div class="row">
+                                <div class="col-12 col-md-6 py-2">
+                                    <button id='success-btn' type="submit" class="btn shadow-btn bg-blue white">SUSCRIBIRSE</button>
+                                </div>
+                            </form>
+                            <div class="col-12 col-md-6 py-2">
+                                <button id='not-btn' class='bg-transparent btn bd-blue blue'>Por ahora no</button></div>
                             </div>
-                        </form>
                         </div>
                     </div>
                 </div>

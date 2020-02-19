@@ -2,7 +2,7 @@
 const contact = $('#contact').offset();
 const nosotrosContainer = $('.nosotros-container').offset();
 const serviciosContainer = $('.servicios-container').offset();
-$('#contact-success, #success-btn').click(function(){
+$('#not-btn, #success-btn').click(function(){
     
     $('.contact-success').toggleClass('success-none');
     $('.success-col').toggleClass('success-none');

@@ -27,7 +27,7 @@ class ContactController extends Controller
             function($message) use ($request)
             {
                 $message->from('limayWeb@gmail.com');
-                $message->to('dbouzo77@gmail.com', 'Admin')->subject($request->get('subject'));
+                $message->to('dbouzo77@gmail.com', 'Admin')->subject('Nuevo mensaje en Limay Web');
             }
         );
         session()->flash('success', 'Gracias por escribirnos!');
