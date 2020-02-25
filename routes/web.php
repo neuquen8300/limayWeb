@@ -23,9 +23,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/panel', function () {
-    return view('panel');
-});
 
 Route::post('/contact', 'ContactController@contactSaveData');
 

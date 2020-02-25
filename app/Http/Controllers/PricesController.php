@@ -25,6 +25,6 @@ class PricesController extends Controller
         $prices->path = $filename;
         $prices->file_extension = $extension;
         $prices->save();
-        return view('panel');
+        return view('admin');
     }
 }

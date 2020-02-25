@@ -59,16 +59,16 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 col-md-4">
-                                        <input id="cliente" type="radio" class="" name="role" value="cliente" >
+                                        <input id="cliente" type="radio" class="" name="role" value="1" >
                                         <label for="cliente">Cliente</label>
                                     </div>
                                                            
                                     <div class="col-12 col-md-4">
-                                        <input id="vendedor" type="radio" class="" name="role" value="vendedor" >
+                                        <input id="vendedor" type="radio" class="" name="role" value="2" >
                                         <label for="vendedor">Vendedor</label>
                                     </div> 
                                     <div class="col-12 col-md-4">
-                                        <input id="admin" type="radio" class="" name="role" value="admin" >
+                                        <input id="3" type="radio" class="" name="role" value="3" >
                                         <label for="admin">Administrador</label>
                                     </div>  
                                     </div>                             
