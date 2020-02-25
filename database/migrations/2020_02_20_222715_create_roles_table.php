@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class LimayWeb extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class LimayWeb extends Migration
      */
     public function up()
     {
-        Schema::create('contact', function (Blueprint $table) { 
-            $table->increments('id'); 
-            $table->timestamps(); 
-            $table->string('name'); 
-            $table->string('email'); 
-            $table->text('message'); 
+        Schema::create('roles', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
+            $table->string('role_name', 16);
             
-    
-    });
+        });
     }
 
     /**
@@ -31,6 +28,6 @@ class LimayWeb extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('roles');
     }
 }

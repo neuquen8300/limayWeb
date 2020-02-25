@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends ('layouts.app')
 
-        <title>Limay S.A.S. - Inicio</title>
-
-        <!-- Fonts -->
-        
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel='stylesheet' href="css/styles.css">
-        <link rel="stylesheet" href='css/home.css'>
-        <link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet">
-        <!-- Styles -->  
-    </head>
-    <body>
-        
+@section('content')
     <div class="container title-container" id='title-container'>
         <div class="row pb-4">
             <div class="col-12 col-lg-6 text-center img-col">
@@ -44,7 +28,7 @@
                 <p class='medium'>Envío sin costo!</p>
                 <p class='pb-3'>Abarcamos toda la zona del Alto Valle en Neuquén Capital y alrededores.</p>
                 
-                <a id='precios-btn' class='btn shadow-btn bg-blue white mb-3'>PEDIR LISTA DE PRECIOS</a>        
+                <a href='/lista_de_precios' id='precios-btn' class='btn shadow-btn bg-blue white mb-3'>VER LISTA DE PRECIOS</a>        
             </div>
             <div class="col-12 col-lg-6 pb-2">
                 <h3 class='black'>
@@ -118,7 +102,7 @@
         <div class="container marcas-container white">
        
             <div class="row ">
-               <div class="col-12 text-center ">
+               <div class="col-12 text-center pb-4">
                    <p>Estas marcas ya nos confían su distribución:</p>
                </div>
             </div>
@@ -190,7 +174,7 @@
                             </a>
                         </div>
                         <div class="col-6">
-                            <a class='btn blue'href="">
+                            <a class='btn blue'href="https://instagram.com/limaymayorista">
                                 <i class="lni-instagram size-md"></i>
                             </a>    
                         </div>
@@ -225,7 +209,7 @@
                                 </div>
                             </form>
                             <div class="col-12 col-md-6 py-2">
-                                <button id='not-btn' class='bg-transparent btn bd-blue blue'>Por ahora no</button></div>
+                                <a id='not-btn' class='bg-transparent btn bd-blue blue'>Por ahora no</a></div>
                             </div>
                         </div>
                     </div>
@@ -234,10 +218,6 @@
         </div>
            
         @endif
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    
 
-    </body>
-</html>
+@endsection
