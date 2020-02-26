@@ -11,16 +11,24 @@
                 <h2>{{ __('INICIAR SESIÓN') }}</h2>
 
                
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ action('Auth\LoginController@login') }}">
                         @csrf
-
+                        @if($errors)
+                        <div class='rounded bg-rojo'>
+                            @foreach ($errors->all() as $error)
+                                <div class="py-2">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
                         <div class="row pb-3">
                             <label for="username" class="col-12"><p>{{ __('Usuario:') }}</p></label>
 
                             <div class="col-12">
-                                <input id="username" type="text" class="w-100 @error('user') is-invalid @enderror" name="username"  placeholder='Tu usuario...' value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                <input id="username" type="text" class="w-100 @error('username') is-invalid @enderror" name="username"  placeholder='Tu usuario...' value="{{ old('username') }}" required autocomplete="username" >
 
-                                @error('email')
+                                @error('username')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

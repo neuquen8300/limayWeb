@@ -11,6 +11,9 @@ class ContactController extends Controller
         return view('contact');
     }
 
+    // Almacenar los datos y enviar un mail con lo enviado desde el
+    // form 'Contacto' en la home.
+    
     public function contactSaveData(Request $request){
         $this->validate($request, [
             'name' => ['required', 'string', new NoHtml],

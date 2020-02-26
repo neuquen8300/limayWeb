@@ -11,7 +11,7 @@
                 <h2>{{ __('REGISTRAR USUARIO') }}</h2>
 
                 
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ action('AdminController@altaUsuario') }}">
                         @csrf
 
                         <div class="row pb-3">

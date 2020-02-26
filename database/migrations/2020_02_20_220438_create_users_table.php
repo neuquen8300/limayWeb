@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 64);
             $table->string('username', 32);
             $table->string('password', 64);
-            $table->unsignedBigInteger('role_id');
+            $table->string('role', 16);
             
         });
     }

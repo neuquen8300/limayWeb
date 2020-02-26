@@ -8,11 +8,16 @@ use Illuminate\Support\Facades\Storage;
 
 class PricesController extends Controller
 {
+    // Descargar la lista de precios mas nueva.
+
     public function Download(Request $request){
+
         $prices = Prices::select('path')->latest()->get()->toArray();
-        
         return Storage::Download("public/" . $prices[0]['path'], 'Limay - Lista de precios');
+
     }
+
+    // Subir la lista de precios
 
     public function Upload(Request $request){
         $this->validate($request, [
