@@ -12,7 +12,7 @@ class AdminController extends Controller
 
         $request->user()->authorizeRoles(['admin']);
 
-        return view('admin');
+        return view('admin/admin');
     }
 
     // Cargar un usuario nuevo desde el panel de admin

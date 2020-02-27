@@ -13,14 +13,11 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SuscribeController;
-use App\Http\Middleware\CheckRole;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 
 
@@ -29,7 +26,6 @@ Route::post('/contact', 'ContactController@contactSaveData');
 Route::post('/suscribe', 'SuscribeController@SuscribeSaveData');
 
 Route::get('/lista_de_precios', 'PricesController@download');
-
 
 Route::get('/admin', function(){
 
@@ -46,12 +42,10 @@ Route::get('/usuarionuevo', function(){
 Route::post('/usuarionuevo', 'AdminController@altaUsuario')->middleware('admin');
 
 
-Route::post('/admin', 'PricesController@Upload');
+Route::post('/admin', 'PricesController@Upload')->middleware('admin');
 
 Route::get('/dd', function(){
     return dd(Auth::user());
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
