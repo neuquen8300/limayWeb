@@ -44,7 +44,7 @@
     </div>
     </div>
    
-   <div class="container-fluid bg-blue">
+   <div class="container-fluid nosotros-fluid">
    <div class="container nosotros-container white">
         <div class="row">
            
@@ -98,7 +98,7 @@
         </div>
     </div>
     </div>
-    <div class="container-fluid bg-blue">
+    <div class="container-fluid marcas-fluid">
         <div class="container marcas-container white">
        
             <div class="row ">

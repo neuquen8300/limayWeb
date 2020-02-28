@@ -44,6 +44,7 @@ Route::post('/usuarionuevo', 'AdminController@altaUsuario')->middleware('admin')
 
 Route::post('/admin', 'PricesController@Upload')->middleware('admin');
 
+
 Route::get('/dd', function(){
     return dd(Auth::user());
 });

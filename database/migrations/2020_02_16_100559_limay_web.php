@@ -18,7 +18,7 @@ class LimayWeb extends Migration
             $table->timestamps(); 
             $table->string('name'); 
             $table->string('email'); 
-            $table->text('message'); 
+            $table->text('user_message'); 
             
     
     });
