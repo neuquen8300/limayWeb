@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="container-fluid">
-    <div class="container servicios-container blue">
+    <div class="container servicios-container ">
         <div class="row">
             <div class="col-12 pb-3 black servicios-title">
                 <h2>
