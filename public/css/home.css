@@ -163,7 +163,7 @@ CONTACTO
         padding-top: 2.5rem!important;
         padding-bottom: 2.5rem!important;
     }
-    .nosotros-container, .title-container{
+    .nosotros-container, .title-container, .contacto-container{
         padding-bottom: 4rem!important;
     }
     .servicios-container{
@@ -195,10 +195,10 @@ CONTACTO
         padding-top: 1.5rem!important;
         padding-bottom: 1.5rem!important;
     }
-    .nosotros-container, .title-container{
+    .nosotros-container, .title-container, .contacto-container{
         padding-bottom: 3rem!important;
     }
-    .nosotros-container{
+    .nosotros-container, .contacto-container{
         padding-top: 3rem!important;
     }
     .nosotros-fluid{

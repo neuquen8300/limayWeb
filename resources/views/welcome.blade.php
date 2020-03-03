@@ -44,59 +44,55 @@
     </div>
     </div>
    
-   <div class="container-fluid nosotros-fluid">
-   <div class="container nosotros-container white">
-        <div class="row">
-           
-            <div class="col-12 col-md-6">
-                <h2 class='nosotros-title'>NOSOTROS</h2>
-                <p class='pb-3'>Desde 2015, acompañando a los comercios del alto valle, Limay comenzó su historia de manera humilde en el garage de una casa.</p>
-                <p class='pb-3'>Hoy contamos con más de 250 clientes que confían en nuestro servicio de distribución de alimentos.</p>
-                <p class='pb-3'>Ahora expandimos nuestras fronteras con nuestro nuevo servicio de logística a pedido del cliente.</p>
+    <div class="container-fluid nosotros-fluid">
+        <div class="container nosotros-container white">
+            <div class="row">  
+                <div class="col-12 col-md-6">
+                    <h2 class='nosotros-title'>NOSOTROS</h2>
+                    <p class='pb-3'>Desde 2015, acompañando a los comercios del alto valle, Limay comenzó su historia de manera humilde en el garage de una casa.</p>
+                    <p class='pb-3'>Hoy contamos con más de 250 clientes que confían en nuestro servicio de distribución de alimentos.</p>
+                    <p class='pb-3'>Ahora expandimos nuestras fronteras con nuestro nuevo servicio de logística a pedido del cliente.</p>
+                </div>
+                <div class="col-12 col-md-6">
+                </div>
             </div>
-            <div class="col-12 col-md-6">
-
-            </div>
- 
         </div>
     </div>
-   </div>
    
     <div class="container-fluid">
+        <div class="container contacto-container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="pb-4" id='contact'>ESTAMOS EN CONTACTO</h2>
+                </div>
+                <div class="col-12 col-md-6 form-col">
+                    <form class='form' action="{{ action('ContactController@contactSaveData') }}" method="POST">
+                    @csrf
+                    <div class="input-wrapper pb-2">
+                            <label for="Nombre"><p>Nombre:</p></label>
+                            <input class=' w-100' type="text" name="name" id="name" placeholder="Tu nombre..." required>
+                        </div>
+                        <div class="input-wrapper pb-2">
+                            <label for="email"><p>Email:</p></label>
+                            <input class=' w-100' type="email" name="email" id="email" placeholder="Tu email..." required>
+                        </div>
+                        <div class="input-wrapper pb-2">
+                            <label for="msg"><p>Algo que nos quieras decir:</p></label>
+                            <textarea class=' w-100' name="user_message" id="user_message" cols="30" rows="4" placeholder='Ej: "Quiero una lista de precios para un almacén"'></textarea>
+                        </div>
+                        <button class='my-2 btn bg-blue white shadow-btn' type="submit">ENVIAR MENSAJE</button>
+                    </form>
 
-    <div class="container contacto-container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="pb-4" id='contact'>ESTAMOS EN CONTACTO</h2>
-            </div>
-            <div class="col-12 col-md-6 form-col">
-                <form class='form' action="{{ action('ContactController@contactSaveData') }}" method="POST">
-                @csrf
-                <div class="input-wrapper pb-2">
-                        <label for="Nombre"><p>Nombre:</p></label>
-                        <input class=' w-100' type="text" name="name" id="name" placeholder="Tu nombre..." required>
-                    </div>
-                    <div class="input-wrapper pb-2">
-                        <label for="email"><p>Email:</p></label>
-                        <input class=' w-100' type="email" name="email" id="email" placeholder="Tu email..." required>
-                    </div>
-                    <div class="input-wrapper pb-2">
-                        <label for="msg"><p>Algo que nos quieras decir:</p></label>
-                        <textarea class=' w-100' name="user_message" id="user_message" cols="30" rows="4" placeholder='Ej: "Quiero una lista de precios para un almacén"'></textarea>
-                    </div>
-                    <button class='my-2 btn bg-blue white shadow-btn' type="submit">ENVIAR MENSAJE</button>
-                </form>
-                
-            </div>
-            <div class="col-12 col-md-6 contact-info-col">
-                <h3 class='py-2'>Limay S.A.S.</h3>
-                <p class='semibold'>Dirección: <span class='light'>Linares 1578</span></p>
-                <p class='semibold'>Horarios: <span class='light'>Lunes a Sábados: 8hs a 14hs</span>
-                <p class='semibold pb-4'>Teléfono: <span class='light'>299 - 5176476</span></p>
-                <a class='btn shadow-btn white bg-blue' href="tel:2990303456">LLAMAR</a> 
+                </div>
+                <div class="col-12 col-md-6 contact-info-col">
+                    <h3 class='py-2'>Limay S.A.S.</h3>
+                    <p class='semibold'>Dirección: <span class='light'>Linares 1578</span></p>
+                    <p class='semibold'>Horarios: <span class='light'>Lunes a Sábados: 8hs a 14hs</span>
+                    <p class='semibold pb-4'>Teléfono: <span class='light'>299 - 5176476</span></p>
+                    <a class='btn shadow-btn white bg-blue' href="tel:2990303456">LLAMAR</a> 
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <div class="container-fluid marcas-fluid">
         <div class="container marcas-container white">

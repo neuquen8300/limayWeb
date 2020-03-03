@@ -26,7 +26,7 @@
                                 Subir archivo:
                             </p>       
                         </label>
-                        <input type="file" name="listaPrecios" id="file">
+                        <input type="file" name="listaPrecios" class='w-100' id="file">
                     </div>
                     <div class="col-12">
                         <button class='btn white bg-blue' type="submit">SUBIR LISTA</button>

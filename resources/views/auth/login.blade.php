@@ -10,9 +10,6 @@
             
                 <h2>{{ __('INICIAR SESIÓN') }}</h2>
 
-               
-                    <form method="POST" action="{{ action('Auth\LoginController@login') }}">
-                        @csrf
                         @if($errors)
                         <div class='rounded bg-rojo'>
                             @foreach ($errors->all() as $error)
@@ -22,6 +19,9 @@
                             @endforeach
                         </div>
                     @endif
+                    <form method="POST" action="{{ action('Auth\LoginController@login') }}">
+                        @csrf
+                        
                         <div class="row pb-3">
                             <label for="username" class="col-12"><p>{{ __('Usuario:') }}</p></label>
 
