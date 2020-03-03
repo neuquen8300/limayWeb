@@ -9,6 +9,16 @@
     <meta name="description" content="Limay S.A.S, Mayorista de alimentos. Logística y transporte. Neuquén Capital">
     <meta name='robots' content="nofollow">
     <!-- CSRF Token -->
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159554218-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-159554218-1');
+    </script>
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
