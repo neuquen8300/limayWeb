@@ -3,7 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="keywords" content="limay, neuquen, mayorista, alimentos, logistica, transporte, fiambres, quesos,
+                                    distribucion, distribuidora, frio, catering, eventos, negocios, almacenes, despensa,
+                                    kiosco, restaurant">
+    <meta name="description" content="Limay S.A.S, Mayorista de alimentos. Logística y transporte. Neuquén Capital">
+    <meta name='robots' content="nofollow">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
