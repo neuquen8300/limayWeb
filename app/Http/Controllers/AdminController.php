@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Prices;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -10,9 +11,14 @@ class AdminController extends Controller
 {
     public function index(Request $request){
 
-        $request->user()->authorizeRoles(['admin']);
-
-        return view('admin/admin');
+        
+        
+        $getLast = Prices::select('created_at')->latest()->get()->toArray();
+        $last = $getLast[0]['created_at'];
+        
+        return view('admin/admin', compact('last'));
+        
+        
     }
 
     // Cargar un usuario nuevo desde el panel de admin

@@ -10,7 +10,7 @@ $('#not-btn, #success-btn').click(function(){
 
 
 
-$('#title-btn, #precios-btn, #cotizacion-btn').click(function(){
+$('#title-btn, #cotizacion-btn').click(function(){
     document.getElementById('contact').scrollIntoView({
         behavior: 'smooth'
     })

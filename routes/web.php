@@ -27,11 +27,7 @@ Route::post('/suscribe', 'SuscribeController@SuscribeSaveData');
 
 Route::get('/lista_de_precios', 'PricesController@download');
 
-Route::get('/admin', function(){
-
-    return view('admin/admin');
-
-})->middleware('admin');
+Route::get('/admin', 'AdminController@index')->middleware('admin');
 
 Route::get('/usuarionuevo', function(){
 
@@ -44,9 +40,15 @@ Route::post('/usuarionuevo', 'AdminController@altaUsuario')->middleware('admin')
 
 Route::post('/admin', 'PricesController@Upload')->middleware('admin');
 
+Route::get('/dashboard', 'UserController@index')->middleware('auth');
 
-Route::get('/dd', function(){
-    return dd(Auth::user());
-});
+Route::get('/registerVisit', 'UserController@getRegisterVisit')->middleware('auth');
 
+Route::get('/account/{id}', 'UserController@getClient')->middleware('auth');
+
+Route::get('/payment/{id}', 'UserController@getPayment')->middleware('auth');
+
+Route::get('/new-order/{id}', 'UserController@getNewOrder')->middleware('auth');
+
+Route::get('/confirmPayment/{id}', 'UserController@getConfirmPayment')->middleware('auth');
 Auth::routes();

@@ -4,7 +4,11 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-md-6">
-            <span></span>
+            @if (isset($last))
+            <h6>
+                Ultima vez: {{$last}}
+            </h6>
+            @endif
         </div>
         <div class="col-12 col-md-6">
             <h2>SUBIR LISTA DE PRECIOS</h2>

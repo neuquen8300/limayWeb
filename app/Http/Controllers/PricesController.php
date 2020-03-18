@@ -12,8 +12,8 @@ class PricesController extends Controller
 
     public function Download(Request $request){
 
-        $prices = Prices::select('path')->latest()->get()->toArray();
-        return Storage::Download("public/" . $prices[0]['path'], 'Limay - Lista de precios');
+        $prices = Prices::select('path', 'file_extension')->latest()->get()->toArray();
+        return Storage::Download("public/" . $prices[0]['path'], 'Limay - Lista de precios.' . $prices[0]['file_extension']);
 
     }
 
@@ -30,6 +30,6 @@ class PricesController extends Controller
         $prices->path = $filename;
         $prices->file_extension = $extension;
         $prices->save();
-        return view('admin');
+        return view('admin.admin');
     }
 }

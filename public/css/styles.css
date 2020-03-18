@@ -37,7 +37,9 @@ form input, textarea{
     padding: 8px 12px;
     border-width: 0 0 1px 0;
     border-style: solid;
-    border-color: #393185;
+    border-color: rgb(57, 49, 133);
+    background-color: rgba(57, 49, 133, 0.025) ;
+    /* rgba(150, 169, 228, 0.025)*/
 }
 
 form input:focus, form textarea:focus{
@@ -85,6 +87,9 @@ form input:focus, form textarea:focus{
     border-width: 1px;
     border-style: solid;
 }
+.bg-lightgray{
+    background-color: rgba(43, 42, 41, 0.07);
+}
 .black{
     color: #2B2A29!important;
 }
@@ -100,6 +105,15 @@ form input:focus, form textarea:focus{
 .gray{
     color: rgba(110, 109, 172, 0.35);
 }
+.lightgray{
+    color: rgba(43, 42, 41, 0.07);
+}
+.grayblue{
+    color: #efeeee;
+}
+.red{
+    color: #853931;
+}
 .bg-black{
     background-color: #2B2A29;
 }
@@ -114,6 +128,9 @@ form input:focus, form textarea:focus{
 }
 .bg-white{
     background-color: #FFF;
+}
+.bg-grayblue{
+    background-color: #efeeee;
 }
 
 .btn{
