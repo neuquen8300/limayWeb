@@ -4,13 +4,13 @@
 }
 
 .confirmPayment{
-    background-color: rgba(0, 0, 0, 0.5);
- 
+    display: flex;
+    align-items: flex-end;
     width: 100%;
     height: 100%;
-    position:fixed;
+    position: fixed;
     left: 50%;
-    top: 0%;
+    bottom: 0;
     z-index: 1;
     transform: translate(-50%, 100%);
     animation-name: modal;
@@ -19,6 +19,9 @@
     animation-fill-mode: forwards;
 
 }
+.payment-container{
+    margin-bottom: 0;
+}
 .modalClose{
     animation-name: modalClose;
     animation-duration: 0.4s;
@@ -26,12 +29,16 @@
 }
 
 @keyframes modal{
+    50%{
+        background-color: rgba(0, 0, 0, 0.25);
+    }
     100% {
         transform: translate(-50%, 0%);
+        background-color: rgba(0, 0, 0, 0.5);
     }
 }
 @keyframes modalClose {
     100% {
-        transform: translate(-50%, 100%);
+        transform: translate(-50%, -100%);
     }
 }

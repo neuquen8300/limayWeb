@@ -19,7 +19,8 @@ class UserController extends Controller
     }
 
     public function getPayment(int $id){
-        $accounts = Client::where('client_id', $id)->get();
+        $accounts = Client::where('client_id', $id)->first();
+        
         return view('user.payment', compact('accounts'));
     }
     public function getConfirmPayment(){

@@ -5,7 +5,9 @@ window.onload = () => {
     let formArray = Array.from(form.elements);
 
     let confirm = document.getElementById('confirmPayment');
-    console.log(formArray);
+    
+    let businessName = document.getElementById('business_name').innerHTML;
+    let clientBalance = document.getElementById('client_balance').innerHTML;
 
     form.onsubmit = (e) => {
         e.preventDefault();
@@ -15,9 +17,9 @@ window.onload = () => {
         if (!confirm.classList.contains('confirmPayment')){
             confirm.classList.add('confirmPayment');
         }
-        confirm.innerHTML = `<div class="container-fluid bg-white">
-
-        <div class="row pt-2"> 
+        confirm.innerHTML = 
+        `<div class="container-fluid payment-container bg-white">
+            <div class="row pt-2"> 
             <div class="col-12 mb-4">
                 <h3 class='light'>Atención!</h3>
                 <h3 class='light'>Se cobrarán <span class='semibold'>$ `+ formArray[1].value +`</span></h3>
@@ -26,7 +28,7 @@ window.onload = () => {
             <div class="col-12 item py-2">
                 <div class="row">
                     <div class='col-12'> 
-                        <h3>Almacén Lo de tito</h3></a> 
+                        <h3>`+ businessName +`</h3></a> 
                     </div> 
                     <div class='col-12'> 
                         <p>ID Cliente: <span class='semibold'>1354<span></p> 
@@ -45,7 +47,7 @@ window.onload = () => {
                 <p> Nuevo saldo:</p> 
             </div> 
             <div class="col-6 text-right">
-                <p class='semibold'> $ 1532</p>
+                <p class='semibold'> $ `+ (clientBalance - formArray[1].value).toFixed(2)  +`</p>
             </div>
         </div>
         <div class="row">
@@ -55,16 +57,16 @@ window.onload = () => {
         </div>
         <div class="row py-3">
             <div class="col-12 mb-3">
-                <a href="" class='btn btn-block bg-blue white'>SI, COBRAR</a>
+                <a id='pay' class='btn btn-block bg-blue white'>SI, COBRAR</a>
             </div>
             <div class="col-12">
                 <a id='goBack' class='btn btn-block bg-lightgray blue'>NO, VOLVER</a>
             </div>
         </div>
-    </div>`
-    window.scrollTo(0, 0);
+    </div>`;
 
     let goBack = document.getElementById('goBack');
+    let pay = document.getElementById('pay');
 
     goBack.onclick = (e) => {
         e.preventDefault();
@@ -72,7 +74,39 @@ window.onload = () => {
         confirm.classList.add('modalClose');
         confirm.innerHTML = '';
         }
+
+    pay.onclick = (e) => {
+        e.preventDefault();
+        if (formArray[1].value !== null){
+            let formdata = new FormData(form);
+            
+            fetch('/api/doPayment/',
+            {
+                headers:{
+                    'X-CSRF-TOKEN': formArray[0].value
+                },
+                body: formdata,
+                method: 'post'
+            })
+            .then(response => {
+                console.log(response);
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                if(data == 'ok'){
+                    formArray[1].value = '';
+                    location.reload();
+                }
+            })
+            .then(e => {
+                console.log(e);
+            })
+        }
     }
+    }
+
+    
     
    
 }

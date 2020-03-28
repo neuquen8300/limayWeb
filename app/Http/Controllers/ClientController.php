@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Client;
+use App\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ClientController extends Controller
 {
@@ -82,6 +84,22 @@ class ClientController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function doPayment(Request $request){
+        
+        $client = Client::where('client_id', $request->account)->first();
+        
+        $newBalance = $client->client_balance - $request->amount;
+        $client->update(['client_balance' => $newBalance]);
+
+        $payment = new Transaction();
+        $payment->client_id = $client->client_id;
+        $payment->type = 'payment';
+        $payment->user_id = $request->user_id;
+
+        $payment->save();
+
+        return response(json_encode('ok'));
     }
 
     

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-@foreach($accounts as $account)
+
 <div class="container-fluid" id='confirmPaymentContainer'>
     <div class="row">
         <div class="col-12">
@@ -9,13 +9,13 @@
     </div>
     <div class="row my-3">
         <div class="col-12">
-            <h3>{{$account->business_name}}</h3>
+            <h3 id='business_name'>{{$accounts->business_name}}</h3>
         </div>
         <div class="col-6">
             <p>Saldo:</p>
         </div>
         <div class="col-6 text-right">
-            <p class='semibold'>$ <span>{{$account->client_balance}}</span></p>
+            <p class='semibold'>$ <span id='client_balance'>{{$accounts->client_balance}}</span></p>
         </div>
     </div>
     
@@ -120,7 +120,8 @@
                 @csrf
                 <label for="amount">Monto a cobrar:</label>
                     <input type="text" class='w-100 mb-3' name='amount' id='amount'>
-                    <input type="hidden" name='account' value='{{$account->client_id}}'>
+                    <input type="hidden" name='account' value='{{$accounts->client_id}}'>
+                    <input type="hidden" name='user_id' value='{{Auth::user()->email}}'>
                 <button type="submit" class='btn shadow-btn white bg-blue w-100'>COBRAR</button>
             </form>
         </div>
@@ -131,6 +132,6 @@
 </div>
 
 
-@endforeach
+
 <script src="/js/confirmPayment.js"></script>
 @endsection

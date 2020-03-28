@@ -13,14 +13,16 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SuscribeController;
-
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 
-
+Route::get('/dd', function(){
+    return dd(Auth::user()->email);
+});
 Route::post('/contact', 'ContactController@contactSaveData');
 
 Route::post('/suscribe', 'SuscribeController@SuscribeSaveData');

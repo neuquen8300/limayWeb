@@ -67,24 +67,6 @@
         </div>   
     </div>
     <div class="row mb-4">
-        <div class="col-8">
-            <p>Queso Tybo Windy</p>
-        </div>
-        <div class="col-4">
-            <h5>$ 1234</h5>
-        </div>
-        <div class="col-8 blue">
-            <p>con 30% de descuento</p>
-        </div>
-        <div class="col-4 blue">
-            <h5>$ 1234</h5>
-        </div>
-        <div class="col-12">
-            <p>COD: 0303456</p>
-        </div>
-    </div>
-    
-    <div class="row mb-4">
         <div class="col-12 text-right">
             <a href="">
                 <h5 class='text-right blue'>
