@@ -33,7 +33,7 @@ nav{
 .nav-link{
     color:#2B2A29;
 }
-form input, textarea{
+input[type=text], input[type=email], textarea{
     padding: 8px 12px;
     border-width: 0 0 1px 0;
     border-style: solid;

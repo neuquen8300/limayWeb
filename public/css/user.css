@@ -2,11 +2,17 @@
     background-color: rgba(57, 49, 133, 0.025);
     
 }
+.search-container{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
 .confirmAddOrder{
     display: flex;
 }
 
 .confirm{
+    z-index: 999;
     display: flex;
     align-items: flex-end;
     width: 100%;
@@ -14,7 +20,6 @@
     position: fixed;
     left: 50%;
     bottom: 0;
-    z-index: 1;
     transform: translate(-50%, 100%);
     animation-name: modal;
     animation-timing-function: ease-out;

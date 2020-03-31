@@ -6,28 +6,31 @@ window.onload = () => {
     let orderContainer = document.getElementById('order-list');
     let total = document.querySelector('.total');
     let confirmContainer = document.getElementById('confirm');
+    let itemTitle = document.querySelector('.item-title');
+    let itemCod = document.querySelector('.item-cod');
+    let itemBrand = document.querySelector('.item-brand');
+    let itemPrice = document.querySelector('.item-price');
+    let addBtn = document.getElementById('addBtn');
+    let goBack = document.getElementById('goBack');
+    let plusAmount = document.getElementById('plusAmount');
+    let minusAmount = document.getElementById('minusAmount');
+    let subtotal = document.querySelector('.subtotal');
+
     let orderList = (id) => {
         fetch('/api/order-add-product/' + id)
         .then(response => {
             return response.json();
         })
         .then(data => {
-            if(!confirmContainer.classList.contains('confirm')){
-                confirmContainer.classList.add('confirm');
+            document.getElementById('productAmount').value = 1;
+            if(confirmContainer.classList.contains('d-none')){
+                confirmContainer.classList.remove('d-none');
             }
-            
-            orderContainer.insertAdjacentHTML('afterbegin', 
-            `
-            <div class="row">
-                <div class="col-8">
-                    <p>`+ data.name +`</p>
-                </div>
-                <div class="col-4">
-                    <p>$ `+ data.price +`</p>
-                </div>
-            </div>
-            `);
-            (total.innerHTML == '') ? total.innerHTML = parseFloat(data.price) : total.innerHTML = parseFloat(total.innerHTML) + parseFloat(data.price);
+            itemTitle.innerHTML = data.name;
+            itemCod.innerHTML = data.product_id;
+            itemBrand.innerHTML = data.brand;
+            itemPrice.innerHTML = data.price;
+            subtotal.innerHTML = data.price;
         })
         .catch(e => {
             return e;
@@ -97,9 +100,36 @@ window.onload = () => {
             return e;
         })
     }
-    
-
-
-
+    addBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        orderContainer.insertAdjacentHTML('afterbegin', 
+        `<div class="row">
+            <div class="col-8">
+                <p>`+ itemTitle.innerHTML +`</p>
+            </div>
+            <div class="col-4">
+                <p>$ `+ itemPrice.innerHTML +`</p>
+            </div>
+        </div> `
+        );
+        (total.innerHTML == '') ? total.innerHTML = parseFloat(itemPrice.innerHTML) : total.innerHTML = parseFloat(total.innerHTML) + parseFloat(itemPrice.innerHTML);
+        confirmContainer.classList.add('d-none');
+    });
+    goBack.addEventListener('click', (e) => {
+        e.preventDefault();
+        confirmContainer.classList.add('d-none');
+    });
+    plusAmount.addEventListener('click', (e) =>{
+        e.preventDefault();
+        document.getElementById('productAmount').value++;
+        subtotal.innerHTML = itemPrice.innerHTML * document.getElementById('productAmount').value;
+    });
+    minusAmount.addEventListener('click', (e) => {
+        e.preventDefault();
+        if(document.getElementById('productAmount').value > 1){
+            document.getElementById('productAmount').value--;
+            subtotal.innerHTML = itemPrice.innerHTML * document.getElementById('productAmount').value;
+        }
+    })
 
 }
