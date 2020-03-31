@@ -19,6 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('client_id');
             $table->string('type', 255);
             $table->string('user_id', 255);
+            $table->float('amount', 8, 2);
         });
     }
 

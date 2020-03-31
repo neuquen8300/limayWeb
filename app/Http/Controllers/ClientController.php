@@ -94,8 +94,9 @@ class ClientController extends Controller
 
         $payment = new Transaction();
         $payment->client_id = $client->client_id;
-        $payment->type = 'payment';
+        $payment->type = 'Pago';
         $payment->user_id = $request->user_id;
+        $payment->amount = $request->amount;
 
         $payment->save();
 

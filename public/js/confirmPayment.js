@@ -14,8 +14,8 @@ window.onload = () => {
         if (confirm.classList.contains('modalClose')){
             confirm.classList.remove('modalClose');
         }
-        if (!confirm.classList.contains('confirmPayment')){
-            confirm.classList.add('confirmPayment');
+        if (!confirm.classList.contains('confirm')){
+            confirm.classList.add('confirm');
         }
         confirm.innerHTML = 
         `<div class="container-fluid payment-container bg-white">
@@ -70,7 +70,7 @@ window.onload = () => {
 
     goBack.onclick = (e) => {
         e.preventDefault();
-        confirm.classList.remove('confirmPayment');
+        confirm.classList.remove('confirm');
         confirm.classList.add('modalClose');
         confirm.innerHTML = '';
         }

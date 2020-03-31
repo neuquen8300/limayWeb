@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Client;
+use App\Transaction;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,8 +15,9 @@ class UserController extends Controller
     }
     public function getClient(int $id) {
         $accounts = Client::where('client_id', $id)->get();
-       
-        return view('user.client', compact('accounts'));
+        $accMovements = Transaction::where('client_id', $id)->get();
+
+        return view('user.client', compact('accounts','accMovements'));
     }
 
     public function getPayment(int $id){
@@ -28,6 +30,7 @@ class UserController extends Controller
     }
 
     public function getNewOrder($id) {
-        return view('user.new-order');
+        $account = Client::where('client_id', $id)->firstOrFail();
+        return view('user.new-order', compact('account'));
     }
 }

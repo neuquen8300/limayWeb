@@ -84,4 +84,11 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function orderAddProduct($id){
+
+        $product = Product::where('product_id', $id)->first();
+
+        return json_encode($product);
+    }
 }

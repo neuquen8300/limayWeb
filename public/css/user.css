@@ -2,8 +2,11 @@
     background-color: rgba(57, 49, 133, 0.025);
     
 }
+.confirmAddOrder{
+    display: flex;
+}
 
-.confirmPayment{
+.confirm{
     display: flex;
     align-items: flex-end;
     width: 100%;

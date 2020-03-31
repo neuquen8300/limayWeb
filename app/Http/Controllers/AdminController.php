@@ -14,9 +14,8 @@ class AdminController extends Controller
         
         
         $getLast = Prices::select('created_at')->latest()->get()->toArray();
-        $last = $getLast[0]['created_at'];
         
-        return view('admin/admin', compact('last'));
+        return view('admin/admin');
         
         
     }

@@ -36,16 +36,17 @@
             <h5>Detalle de facturación</h5>
         </div>
     </div>
+    @foreach($accMovements as $movement)
     <div class="my-2">
         <div class="row">
             <div class="col-2">
-                <p class='semibold'>20/04</p>
+                <p class='semibold'>{{date('d/m', strtotime($movement->created_at))}}</p>
             </div>
             <div class="col-6">
-                <p class='semibold'>Compra</p>
+                <p class='semibold'>{{$movement->type}}</p>
             </div>
             <div class="col-4 text-right">
-                <p class='semibold'>$ <span class='red'>5000</span></p>
+                <p class='semibold'>$ <span class='red'>{{$movement->amount}}</span></p>
             </div>
         </div>
         <div class="row">
@@ -57,48 +58,7 @@
             </div>
         </div>
     </div>
-    <div class="my-2">
-        <div class="row">
-            <div class="col-2">
-                <p class='semibold'>20/04</p>
-            </div>
-            <div class="col-6">
-                <p class='semibold'>Compra</p>
-            </div>
-            <div class="col-4 text-right">
-                <p class='semibold'>$ <span class='red'>5000</span></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-8">
-                <p>ID Compra: 0303456</p>
-            </div>
-            <div class="col-4 text-right">
-                <a href="">Ver detalle</a>
-            </div>
-        </div>
-    </div>
-    <div class="my-2">
-        <div class="row">
-            <div class="col-2">
-                <p class='semibold'>20/04</p>
-            </div>
-            <div class="col-6">
-                <p class='semibold'>Compra</p>
-            </div>
-            <div class="col-4 text-right">
-                <p class='semibold'>$ <span class='red'>5000</span></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-8">
-                <p>ID Compra: 0303456</p>
-            </div>
-            <div class="col-4 text-right">
-                <a href="">Ver detalle</a>
-            </div>
-        </div>
-    </div>
+    @endforeach
     <div class="row">
         <div class="col-12 text-right my-2">
             <a href="" class='blue'>

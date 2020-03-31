@@ -40,9 +40,9 @@ Route::get('/usuarionuevo', function(){
 Route::post('/usuarionuevo', 'AdminController@altaUsuario')->middleware('admin');
 
 
-Route::post('/admin', 'PricesController@Upload')->middleware('admin');
+Route::post('/admin', 'PricesController@Upload')->name('admin')->middleware('admin');
 
-Route::get('/dashboard', 'UserController@index')->middleware('auth');
+Route::get('/dashboard', 'UserController@index')->name('dashboard')->middleware('auth');
 
 Route::get('/registerVisit', 'UserController@getRegisterVisit')->middleware('auth');
 

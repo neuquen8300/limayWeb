@@ -23,3 +23,5 @@ Route::post('doPayment', 'ClientController@doPayment');
 
 Route::resource('product', 'ProductController');
 
+Route::get('order-add-product/{id}', 'ProductController@orderAddProduct');
+
