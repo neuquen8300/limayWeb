@@ -1,64 +1,83 @@
 @extends('layouts.app')
 @section('content')
-
-<div class="container-fluid mb-3" id=''>
-    <div class="row">
-        <div class="col-12">
-            <h2>CARGAR PEDIDO</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <p>A <span class='semibold'>{{$account->business_name}}:</span></p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 px-0">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-8">
-                        <p>Artículo </p>
-                    </div>
-                    <div class="col-4">
-                        <p>Costo</p>
-                    </div>
-                </div>  
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 px-0">
-            <div class="container-fluid" id='order-list'>
-            </div>
-            
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-8">
-            <h5>Total estimado: </h5>
-        </div>
-        <div class="col-4">
-            <h5>$ <span class='total'></span></h5>
-        </div>    
-    </div>
-</div>
-<div class="container-fluid mb-3 search-container bg-white">
+<div class="container-fluid mb-3 mt-n4 search-container bg-white">
     <div class="row search-row">
         <div class="col-12">
             <form id='search-form' method="get">
                 @csrf
                 <div class="container-fluid ">
-                    <div class="row px-0 ">
-                        <div class="col-8 d-flex align-items-center">
+                    <div class="row ">
+                        <div class="col-10 d-flex align-items-center px-0">
                             <input type="text" name='search' id='search' class='w-100' placeholder='Nombre o código de artículo'>
                         </div>
-                        <div class="col-4">
-                            <button type="submit" class='btn blue'><i class='lni lni-search size-md'></i></button>   
+                        <div class="col-2 px-0 d-flex align-items-center w-100">
+                            <button type="submit" class='search-submit blue'><i class='lni lni-search size-sm'></i></button>   
                         </div>
                     </div>
                 </div>
             </form>
         </div>
+    </div>
+</div>
+<div class="container-fluid fixed-bottom">
+    <div class="row">
+        <div class="col-12 px-0">
+            <a id='orderBtn' class='btn blue w-100 bg-grayblue'>
+                VER PEDIDO
+            </a>
+        </div>
+    </div>
+</div>
+<div id='order' class="confirm d-none">
+    <div class="container-fluid bg-white">
+        <div class="row">
+            <div class="col-12">
+                <p>A <span class='semibold'>{{$account->business_name}}:</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 px-0">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-8">
+                            <p>Artículo </p>
+                        </div>
+                        <div class="col-4">
+                            <p>Costo</p>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12 px-0">
+                <div class="container-fluid order-list" id='order-list'>
+                </div>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <h5>Total estimado: </h5>
+            </div>
+            <div class="col-4">
+                <h5>$ <span class='total'></span></h5>
+            </div>    
+        </div>
+        <div class="row">
+            <div class="col-12 pb-3">
+                <a class='btn bg-blue white w-100'>
+                    ENVIAR PEDIDO
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 pb-3">
+                <a id='orderGoBack' class='btn bg-lightgray blue w-100'>
+                    VOLVER
+                </a>
+            </div>
+        </div>
+        
     </div>
 </div>
 <div class="confirm d-none" id='confirm'>
@@ -103,11 +122,11 @@
         </div>
         <div class="row text-center mt-3">
             <div class="col-6">
-                <input type='radio' name='articleType' id='unidad'>
+                <input id='radioBox' type='radio' name='articleType' value='10'>
                 <label for="caja">Caja</label>
             </div>
             <div class="col-6">
-                <input type="radio" name="articleType" id="unidad">
+                <input id='radioUnit' type="radio" name="articleType" >
                 <label for="unidad">Unidad</label>
             </div>
         </div>

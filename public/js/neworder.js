@@ -12,9 +12,15 @@ window.onload = () => {
     let itemPrice = document.querySelector('.item-price');
     let addBtn = document.getElementById('addBtn');
     let goBack = document.getElementById('goBack');
+    let orderGoBack = document.getElementById('orderGoBack');
+    let orderSend = document.getElementById('orderSend');
     let plusAmount = document.getElementById('plusAmount');
     let minusAmount = document.getElementById('minusAmount');
     let subtotal = document.querySelector('.subtotal');
+    let radioBox = document.getElementById('radioBox');
+    let radioUnit = document.getElementById('radioUnit');
+    let orderBtn = document.getElementById('orderBtn');
+    let order = document.getElementById('order');
 
     let orderList = (id) => {
         fetch('/api/order-add-product/' + id)
@@ -31,15 +37,16 @@ window.onload = () => {
             itemBrand.innerHTML = data.brand;
             itemPrice.innerHTML = data.price;
             subtotal.innerHTML = data.price;
+            radioBox.value = data.per_caja;
         })
         .catch(e => {
             return e;
         })
     }
+
     form.onsubmit = (e) => {
         e.preventDefault();
         results.innerHTML = null;
-        searchList = [];
         let search = formArray[1].value;
         fetch('/api/product/' + search)
         .then(response => {
@@ -100,19 +107,42 @@ window.onload = () => {
             return e;
         })
     }
+
+    let perBoxMultiplier = () => {
+        subtotal.innerHTML = (radioBox.value * document.getElementById('productAmount').value * itemPrice.innerHTML).toFixed(2);
+    }
+    let unitMultiplier = () => {
+        subtotal.innerHTML = (itemPrice.innerHTML * document.getElementById('productAmount').value).toFixed(2);
+    }
+
+    orderBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if(document.getElementById('order').classList.contains('d-none')){
+            document.getElementById('order').classList.remove('d-none');
+        }
+    })
+    orderGoBack.addEventListener('click',e => {
+        e.preventDefault();
+        order.classList.add('d-none');
+    })
     addBtn.addEventListener('click', (e) => {
         e.preventDefault();
         orderContainer.insertAdjacentHTML('afterbegin', 
-        `<div class="row">
+        `<div class="row pb-2">
             <div class="col-8">
-                <p>`+ itemTitle.innerHTML +`</p>
+                <p class='semibold'>`+ itemTitle.innerHTML + `</p>
             </div>
             <div class="col-4">
-                <p>$ `+ itemPrice.innerHTML +`</p>
+                <p class='semibold'>$ `+ subtotal.innerHTML +`</p>
             </div>
+            <div class='col-12'>
+                <p> Cod: ` + itemCod.innerHTML +  `
+            </div>
+            <div class='col-12'>
+                <p>x `+ document.getElementById('productAmount').value + ` ` + (radioBox.checked ? 'caja' : 'unidad') +`  
         </div> `
         );
-        (total.innerHTML == '') ? total.innerHTML = parseFloat(itemPrice.innerHTML) : total.innerHTML = parseFloat(total.innerHTML) + parseFloat(itemPrice.innerHTML);
+        (total.innerHTML == '') ? total.innerHTML = parseFloat(subtotal.innerHTML) : total.innerHTML = (parseFloat(total.innerHTML) + parseFloat(subtotal.innerHTML)).toFixed(2);
         confirmContainer.classList.add('d-none');
     });
     goBack.addEventListener('click', (e) => {
@@ -120,16 +150,33 @@ window.onload = () => {
         confirmContainer.classList.add('d-none');
     });
     plusAmount.addEventListener('click', (e) =>{
+
         e.preventDefault();
         document.getElementById('productAmount').value++;
-        subtotal.innerHTML = itemPrice.innerHTML * document.getElementById('productAmount').value;
+        if(radioBox.checked){
+            perBoxMultiplier();
+        } else {
+            unitMultiplier();
+        }
+
     });
     minusAmount.addEventListener('click', (e) => {
+        
         e.preventDefault();
         if(document.getElementById('productAmount').value > 1){
             document.getElementById('productAmount').value--;
-            subtotal.innerHTML = itemPrice.innerHTML * document.getElementById('productAmount').value;
+            if(radioBox.checked){
+                perBoxMultiplier()
+            } else {
+                unitMultiplier();
+            }
         }
-    })
+    });
+    radioBox.addEventListener('change', () => {
+        perBoxMultiplier();
+    });
 
+    radioUnit.addEventListener('change', () => {
+        unitMultiplier();
+    });
 }

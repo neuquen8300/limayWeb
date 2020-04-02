@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->float('price', 8, 2);
             $table->tinyInteger('active');
+            $table->unsignedInteger('per_caja')->nullable();            
             $table->tinyInteger('by_weight');
         });
     }

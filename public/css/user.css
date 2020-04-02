@@ -11,6 +11,15 @@
     display: flex;
 }
 
+.fixed-bottom{
+    z-index: 998;
+}
+
+.order-list{
+    overflow-y: scroll;
+    max-height: 22.25rem;
+}
+
 .confirm{
     z-index: 999;
     display: flex;

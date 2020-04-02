@@ -33,7 +33,7 @@ nav{
 .nav-link{
     color:#2B2A29;
 }
-input[type=text], input[type=email], textarea{
+input[type=text], input[type=email], input[type=password], textarea, .search-submit{
     padding: 8px 12px;
     border-width: 0 0 1px 0;
     border-style: solid;
@@ -41,7 +41,10 @@ input[type=text], input[type=email], textarea{
     background-color: rgba(57, 49, 133, 0.025) ;
     /* rgba(150, 169, 228, 0.025)*/
 }
-
+.search-submit{
+    border-left: solid 1px #393185;
+    max-height: 41px;
+}
 form input:focus, form textarea:focus{
     background-color: rgba(0, 169, 228, 0.025);
 
