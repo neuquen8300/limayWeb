@@ -15,7 +15,7 @@ class UserController extends Controller
     }
     public function getClient(int $id) {
         $accounts = Client::where('client_id', $id)->get();
-        $accMovements = Transaction::where('client_id', $id)->get();
+        $accMovements = Transaction::where('client_id', $id)->limit(2)->get();
 
         return view('user.client', compact('accounts','accMovements'));
     }
@@ -32,5 +32,8 @@ class UserController extends Controller
     public function getNewOrder($id) {
         $account = Client::where('client_id', $id)->firstOrFail();
         return view('user.new-order', compact('account'));
+    }
+    public function getPromos(){
+        return view('user.promos');
     }
 }

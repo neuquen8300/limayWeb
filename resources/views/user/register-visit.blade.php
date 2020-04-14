@@ -1,21 +1,21 @@
 @extends ('layouts.app')
 @section('content')
 
-<div id='search-box'class="container-fluid">
-    <div class="row mb-4">
-        <div class="col-12">
-            <h2>
-                VISITAR CLIENTE
-            </h2>
-        </div>
+<div class="container-fluid mb-3 mt-n4 search-container bg-white">
+    <div class="row search-row">
         <div class="col-12">
             <form id='search-form' method="get">
                 @csrf
-                <div class="mb-3">
-                    <label for="search">Buscar cliente:</label>
-                    <input type="text" name='search' id='search'  class='w-100'>
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <div class="col-10 d-flex align-items-center px-0">
+                            <input type="text" name='search' id='search' class='w-100' placeholder='Nombre o número de cliente'>
+                        </div>
+                        <div class="col-2 px-0 d-flex align-items-center ">
+                            <button type="submit" class='search-submit blue w-100'><i class='lni lni-search size-sm'></i></button>   
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" class='btn shadow-btn white bg-blue'>BUSCAR</button>
             </form>
         </div>
     </div>

@@ -4,22 +4,28 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Prices;
+use App\Promo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
     public function index(Request $request){
+        
+        $date = Prices::select('created_at')->latest()->get();
+        if(isset($date[0])){
+        $last = $date[0]->created_at->format('j-m-Y'); 
+        }
 
-        
-        
-        $getLast = Prices::select('created_at')->latest()->get()->toArray();
-        
-        return view('admin/admin');
+        $promos = Promo::where('active', 1)->get();
+        return view('admin/admin', compact(['last', 'promos']));
         
         
     }
 
+    public function getNewPromo(){
+        return view('admin.new-offer');
+    }
     // Cargar un usuario nuevo desde el panel de admin
 
     public function altaUsuario(Request $request) {

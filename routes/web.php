@@ -31,6 +31,8 @@ Route::get('/lista_de_precios', 'PricesController@download');
 
 Route::get('/admin', 'AdminController@index')->middleware('admin');
 
+Route::get('/new-promo', 'AdminController@getNewPromo')->middleware('admin');
+
 Route::get('/usuarionuevo', function(){
 
     return view('admin/usuarionuevo');
@@ -46,6 +48,8 @@ Route::get('/dashboard', 'UserController@index')->name('dashboard')->middleware(
 
 Route::get('/registerVisit', 'UserController@getRegisterVisit')->middleware('auth');
 
+Route::get('/new-client', 'ClientController@getNewClient')->middleware('auth');
+
 Route::get('/account/{id}', 'UserController@getClient')->middleware('auth');
 
 Route::get('/payment/{id}', 'UserController@getPayment')->middleware('auth');
@@ -53,4 +57,7 @@ Route::get('/payment/{id}', 'UserController@getPayment')->middleware('auth');
 Route::get('/new-order/{id}', 'UserController@getNewOrder')->middleware('auth');
 
 Route::get('/confirmPayment/{id}', 'UserController@getConfirmPayment')->middleware('auth');
+
+Route::get('/promos', 'UserController@getPromos')->middleware('auth');
+
 Auth::routes();

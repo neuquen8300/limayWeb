@@ -102,6 +102,8 @@ class ClientController extends Controller
 
         return response(json_encode('ok'));
     }
-
+    public function getNewClient(){
+        return view('user.new-client');
+    }
     
 }

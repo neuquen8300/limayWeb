@@ -9,7 +9,6 @@
         <div class="col-12 col-md-6">
             
                 <h2>{{ __('REGISTRAR USUARIO') }}</h2>
-
                 
                     <form method="POST" action="{{ action('AdminController@altaUsuario') }}">
                         @csrf
@@ -118,7 +117,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-12">
-                                <button type="submit" class="btn white bg-blue">
+                                <button type="submit" class="btn white bg-blue w-100">
                                     {{ __('REGISTRAR') }}
                                 </button>
                             </div>

@@ -10,8 +10,8 @@
                         <div class="col-10 d-flex align-items-center px-0">
                             <input type="text" name='search' id='search' class='w-100' placeholder='Nombre o código de artículo'>
                         </div>
-                        <div class="col-2 px-0 d-flex align-items-center w-100">
-                            <button type="submit" class='search-submit blue'><i class='lni lni-search size-sm'></i></button>   
+                        <div class="col-2 px-0 d-flex align-items-center ">
+                            <button type="submit" class='search-submit blue w-100'><i class='lni lni-search size-sm'></i></button>   
                         </div>
                     </div>
                 </div>
@@ -29,13 +29,13 @@
     </div>
 </div>
 <div id='order' class="confirm d-none">
-    <div class="container-fluid bg-white">
+    <div class="container-fluid bg-white pt-3">
         <div class="row">
             <div class="col-12">
                 <p>A <span class='semibold'>{{$account->business_name}}:</span></p>
             </div>
         </div>
-        <div class="row">
+        <div class="row pb-2">
             <div class="col-12 px-0">
                 <div class="container-fluid">
                     <div class="row">
@@ -86,7 +86,7 @@
             <div class="col-12 py-2">
                 <div class="row">
                     <div class='col-12'> 
-                        <h3 class='item-title'>Item</h3>
+                        <h3 class='item-title bold'>Item</h3>
                     </div> 
                     <div class='col-12'> 
                         <p>COD: <span class='semibold item-cod'>1354<span></p> 

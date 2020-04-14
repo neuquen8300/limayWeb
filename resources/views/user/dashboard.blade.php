@@ -80,10 +80,9 @@
             <a href="/registerVisit" class='btn shadow-btn white bg-blue'>REGISTRAR VISITA</a>
         </div>
         <div class="col-12 mb-3">
-            <a href="" class='btn shadow-btn white bg-blue'>NUEVO CLIENTE</a>
+            <a href="/new-client" class='btn shadow-btn white bg-blue'>NUEVO CLIENTE</a>
         </div>
     </div>
-    
 </div>
 
 @endsection
