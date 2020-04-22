@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-fluid mb-3 mt-n4 search-container bg-white">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="container-fluid">
+
+            
     <div class="row search-row">
         <div class="col-12">
             <form id='search-form' method="get">
@@ -17,11 +22,14 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div>  
 </div>
+        </div>
+        </div>
+    </div>
 <div class="container-fluid fixed-bottom">
     <div class="row">
-        <div class="col-12 px-0">
+        <div class="col-12 col-md-6 offset-md-3 px-0">
             <a id='orderBtn' class='btn blue w-100 bg-grayblue'>
                 VER PEDIDO
             </a>
@@ -31,57 +39,65 @@
 <div id='order' class="confirm d-none">
     <div class="container-fluid bg-white pt-3">
         <div class="row">
-            <div class="col-12">
-                <p>A <span class='semibold'>{{$account->business_name}}:</span></p>
-            </div>
-        </div>
-        <div class="row pb-2">
-            <div class="col-12 px-0">
+            <div class="col-12 col-md-6 offset-md-3">
                 <div class="container-fluid">
                     <div class="row">
+                        <div class="col-12">
+                            <p>A <span class='semibold'>{{$account->business_name}}:</span></p>
+                        </div>
+                    </div>
+                    <div class="row pb-2">
+                        <div class="col-12 px-0">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p>Artículo </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>Costo</p>
+                                    </div>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12 px-0">
+                            <div class="container-fluid order-list" id='order-list'>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-8">
-                            <p>Artículo </p>
+                            <h5>Total estimado: </h5>
                         </div>
                         <div class="col-4">
-                            <p>Costo</p>
+                            <h5>$ <span class='total'></span></h5>
+                        </div>    
+                    </div>
+                    <div class="row">
+                        <div class="col-12 pb-3">
+                            <a class='btn bg-blue white w-100'>
+                                ENVIAR PEDIDO
+                            </a>
                         </div>
-                    </div>  
+                    </div>
+                    <div class="row">
+                        <div class="col-12 pb-3">
+                            <a id='orderGoBack' class='btn bg-lightgray blue w-100'>
+                                VOLVER
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-12 px-0">
-                <div class="container-fluid order-list" id='order-list'>
-                </div>    
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-8">
-                <h5>Total estimado: </h5>
-            </div>
-            <div class="col-4">
-                <h5>$ <span class='total'></span></h5>
-            </div>    
-        </div>
-        <div class="row">
-            <div class="col-12 pb-3">
-                <a class='btn bg-blue white w-100'>
-                    ENVIAR PEDIDO
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 pb-3">
-                <a id='orderGoBack' class='btn bg-lightgray blue w-100'>
-                    VOLVER
-                </a>
-            </div>
-        </div>
-        
     </div>
 </div>
 <div class="confirm d-none" id='confirm'>
     <div class="container-fluid payment-container bg-white">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class="container-fluid">
         <div class="row pt-2">            
             <div class="col-12 py-2">
                 <div class="row">
@@ -149,6 +165,9 @@
             </div>
             <div class="col-12">
                 <a id='goBack' class='btn btn-block bg-lightgray blue'>NO, VOLVER</a>
+            </div>
+        </div>
+        </div>
             </div>
         </div>
     </div>

@@ -19,6 +19,9 @@ window.onload = () => {
         }
         confirm.innerHTML = 
         `<div class="container-fluid payment-container bg-white">
+        <div class="row "> 
+            <div class="col-12 col-md-6 offset-md-3">
+                <div class='container-fluid'>
             <div class="row pt-2"> 
             <div class="col-12 mb-4">
                 <h3 class='light'>Atención!</h3>
@@ -63,7 +66,11 @@ window.onload = () => {
                 <a id='goBack' class='btn btn-block bg-lightgray blue'>NO, VOLVER</a>
             </div>
         </div>
-    </div>`;
+    </div>
+    </div>
+        </div>
+    </div>
+    `;
 
     let goBack = document.getElementById('goBack');
     let pay = document.getElementById('pay');

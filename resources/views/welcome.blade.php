@@ -135,7 +135,7 @@
     </div>
     </div>
     
-    <footer class='container-fluid py-4 bg-white'>
+    <footer class='container-fluid pt-4 bg-white'>
         <div class="row">
             <div class="col-12 col-md-4 d-flex order-2 order-md-1">
                 
@@ -176,6 +176,11 @@
                         </div>
                     </div> 
                 </div>
+            </div>
+            <div class="col-12 bg-lightgray order-4 py-2 text-center">
+            
+                © 2020 - <a href="http://abstractdigital.com.ar">abstract digital</a>
+            
             </div>
         </div>
     </footer>

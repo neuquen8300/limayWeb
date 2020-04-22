@@ -1,6 +1,7 @@
  var visitsItem = function(id, businessName, clientName, clientBalance) {
 return `<div class='container-fluid item py-4 mb-1'> 
-<div class='row mb-2'> 
+<div class='row mb-2'>
+
 <div class='col-12'> 
     <a href='/account/`+ id +`'><h3>`+ businessName + `</h3></a> 
 </div> 

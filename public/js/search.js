@@ -12,9 +12,9 @@ window.onload = () => {
     let renderItem = null;
 
     let visitsItem = (id, businessName, clientName, clientBalance) => {
-        return `<div class='container-fluid item py-4 mb-1'> 
+        return `<div class='container-fluid item py-4 mb-1 px-0'> 
                 <div class='row mb-2'> 
-                <div class='col-12'> 
+                <div class='col-12 col-md-6 '> 
                     <a href='/account/`+ id +`'><h3>`+ businessName + `</h3></a> 
                 </div> 
                 <div class='col-12'> 

@@ -3,7 +3,7 @@
 
 <div class="container-fluid mb-3 mt-n4 search-container bg-white">
     <div class="row search-row">
-        <div class="col-12">
+        <div class="col-12 col-md-6 offset-md-3">
             <form id='search-form' method="get">
                 @csrf
                 <div class="container-fluid ">
@@ -17,12 +17,14 @@
                     </div>
                 </div>
             </form>
+            <div id='results'>
+   
         </div>
+        </div>
+        
     </div>
 </div>
-<div id='results'>
-   
-</div>
+
 <script src="js/search.js" ></script>
 
 <script src="js/visitsItem.js" type="module"></script>

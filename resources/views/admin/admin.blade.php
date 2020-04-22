@@ -13,6 +13,9 @@
                 No hay lista cargada.
             </h6>
             @endif
+            <a href='/dashboard' class="btn bg-blue white semibold shadow-btn">
+                VER VISTA VENDEDOR
+            </a>
         </div>
         <div class="col-12 col-md-6">
             <h2>SUBIR LISTA DE PRECIOS</h2>

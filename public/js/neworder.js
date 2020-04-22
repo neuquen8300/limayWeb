@@ -58,6 +58,9 @@ window.onload = () => {
                 data.forEach(element => {
                     results.insertAdjacentHTML('afterbegin',`
                     <div class="container-fluid item py-3 my-1">
+                    <div class="row">
+                            <div class="col-12 col-md-6 offset-md-3">
+                            <div class='container-fluid'>
                         <div class="row">
                             <div class="col-12">
                                 <h3 class='semibold'>`+ element.name +`</h3>
@@ -88,6 +91,9 @@ window.onload = () => {
                                 <a href="" class='btn shadow-btn white bg-blue add-product'>AÑADIR</a>
                             </div>
                         </div>
+                        </div>
+                        </div>
+                    </div>
                     </div>
                     `);
                 });
