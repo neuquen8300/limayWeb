@@ -13,7 +13,6 @@ window.onload = () => {
     let addBtn = document.getElementById('addBtn');
     let goBack = document.getElementById('goBack');
     let orderGoBack = document.getElementById('orderGoBack');
-    let orderSend = document.getElementById('orderSend');
     let plusAmount = document.getElementById('plusAmount');
     let minusAmount = document.getElementById('minusAmount');
     let subtotal = document.querySelector('.subtotal');

@@ -17,18 +17,18 @@
                 VER VISTA VENDEDOR
             </a>
         </div>
-        <div class="col-12 col-md-6">
-            <h2>SUBIR LISTA DE PRECIOS</h2>
-            @if($errors)
-                <div class='rounded bg-rojo'>
-                    @foreach ($errors->all() as $error)
-                        <div class="py-2">
-                            {{ $error }}
-                        </div>
-                    @endforeach
-                </div>
-            @endif
-            <form method="POST" enctype="multipart/form-data" action="{{action('PricesController@Upload')}}">
+            <div class="col-12 col-md-6">
+                <h2>SUBIR LISTA DE PRECIOS</h2>
+                @if($errors)
+                    <div class='rounded bg-rojo'>
+                        @foreach ($errors->all() as $error)
+                            <div class="py-2">
+                                {{ $error }}
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
+                <form method="POST" enctype="multipart/form-data" action="{{action('PricesController@Upload')}}">
                 @csrf
                 <div class="row">
                     <div class="col-12 py-3">
@@ -43,13 +43,9 @@
                         <button class='btn white bg-blue' type="submit">SUBIR LISTA</button>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="col-12 col-md-6">
-            <h3>Ofertas</h3>
-            <a href="/new-promo" class='btn bg-blue white semibold'>OFERTA NUEVA</a>
-            @foreach($promos as $promo)
-            @endforeach
+                </form>
+            </div>
+        
         </div>
     </div>
 </div>
