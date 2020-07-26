@@ -14,7 +14,9 @@ class AdminController extends Controller
         
         $date = Prices::select('created_at')->latest()->get();
         if(isset($date[0])){
-        $last = $date[0]->created_at->format('j-m-Y'); 
+            $last = $date[0]->created_at->format('j-m-Y'); 
+        } else {
+            $last = 'No hay lista de precios cargada';
         }
 
         $promos = Promo::where('active', 1)->get();
