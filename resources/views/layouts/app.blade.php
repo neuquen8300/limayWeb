@@ -24,6 +24,7 @@
             "adressCountry" : "AR"
           },
           "geo" : {
+            "@type" : "geo",
             "latitude" : -38.9720588,
             "longitude" : -68.0474376,
           },
