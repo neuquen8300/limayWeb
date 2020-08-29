@@ -10,26 +10,37 @@
     <meta name='robots' content="nofollow">
     <!-- CSRF Token -->
     <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "LocalBusiness",
-      "name" : "Limay S.A.S.",
-      "image" : "https://limaymayorista.com.ar/img/limaytitle.png",
-      "telephone" : "299 - 5176476",
-      "address" : {
-        "@type" : "PostalAddress",
-        "streetAddress" : "Linares 1578"
-      },
-      "openingHoursSpecification" : {
-        "@type" : "OpeningHoursSpecification",
-        "openingHours": ["Mo,Tu,We,Th,Fr,Sa 08:00-14:00"],
-        "dayOfWeek" : {
-          "@type" : "DayOfWeek",
-          "name" : "Lunes a Sábados"
-        },
-      },
-      "url" : "https://instagram.com/limaymayorista"
-    }
+        {
+          "@context" : "http://schema.org",
+          "@type" : "LocalBusiness",
+          "name" : "Limay S.A.S.",
+          "image" : "https://limaymayorista.com.ar/img/limaytitle.png",
+          "telephone" : "299 - 5176476",
+          "address" : {
+            "@type" : "PostalAddress",
+            "streetAddress" : "Intendente Pedro Linares 1578",
+            "adressLocality" : "Neuquén",
+            "postalCode" : "Q8300",
+            "adressCountry" : "AR"
+          },
+          "geo" : {
+            "latitude" : -38.9720588,
+            "longitude" : -68.0474376,
+          },
+          "openingHoursSpecification" : {
+            "@type" : "OpeningHoursSpecification",
+            "dayOfWeek" : [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ],
+            "opens" :  "8:00",
+            "closes" : "15:00"
+          }
+        }
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159554218-1"></script>
     <script>

@@ -87,7 +87,7 @@
                 <div class="col-12 col-md-6 contact-info-col">
                     <h3 class='py-2'>Limay S.A.S.</h3>
                     <p class='semibold'>Dirección: <span class='light'>Linares 1578</span></p>
-                    <p class='semibold'>Horarios: <span class='light'>Lunes a Sábados: 8:00hs a 14:00hs</span>
+                    <p class='semibold'>Horarios: <span class='light'>Lunes a Sábados: 8:00hs a 15:00hs</span>
                     <p class='semibold pb-4'>Teléfono: <span class='light'>299 - 5176476</span></p>
                     <a class='btn shadow-btn white bg-blue' href="tel:2990303456">LLAMAR</a> 
                 </div>
