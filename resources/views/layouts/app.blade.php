@@ -9,7 +9,7 @@
     <meta name="description" content="Limay S.A.S, Mayorista de alimentos. Logística y transporte. Neuquén Capital">
     <!-- CSRF Token -->
     <script type="application/ld+json">
-        {
+    {
           "@context" : "http://schema.org",
           "@type" : "LocalBusiness",
           "name" : "Limay S.A.S.",
@@ -18,15 +18,15 @@
           "address" : {
             "@type" : "PostalAddress",
             "streetAddress" : "Intendente Pedro Linares 1578",
-            "adressLocality" : "Neuquén",
+            "addressLocality" : "Neuquén",
             "postalCode" : "Q8300",
-            "adressCountry" : "AR"
+            "addressCountry" : "AR"
           },
           "geo" : {
             "@type" : "GeoCoordinates",
-            "name" : "GeoCoordinates",
+            
             "latitude" : -38.9720588,
-            "longitude" : -68.0474376,
+            "longitude" : -68.0474376
           },
           "openingHoursSpecification" : {
             "name" : "OpeningHoursSpecification",
