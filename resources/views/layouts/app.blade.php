@@ -9,7 +9,27 @@
     <meta name="description" content="Limay S.A.S, Mayorista de alimentos. Logística y transporte. Neuquén Capital">
     <meta name='robots' content="nofollow">
     <!-- CSRF Token -->
-    
+    <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "LocalBusiness",
+      "name" : "Limay S.A.S.",
+      "image" : "https://limaymayorista.com.ar/img/limaytitle.png",
+      "telephone" : "299 - 5176476",
+      "address" : {
+        "@type" : "PostalAddress",
+        "streetAddress" : "Linares 1578"
+      },
+      "openingHoursSpecification" : {
+        "@type" : "OpeningHoursSpecification",
+        "dayOfWeek" : {
+          "@type" : "DayOfWeek",
+          "name" : "Lunes a Sábados"
+        },
+      },
+      "url" : "https://instagram.com/limaymayorista"
+    }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159554218-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -106,6 +126,6 @@
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>-->
-<script src="js/script.js"></script>
+<script src="js/script.js" defer></script>
 </body>
 </html>

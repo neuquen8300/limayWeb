@@ -4,7 +4,7 @@
     <div class="container title-container" id='title-container'>
         <div class="row pb-4">
             <div class="col-12 col-lg-6 text-center img-col">
-                <img class='img-title img-fluid title-img-anim' src="img/limaytitle.png" alt="">
+                <img class='img-title img-fluid title-img-anim' src="img/limaytitle.png" alt="Limay Mayorista Logo">
             </div>
             <div class="col-12 col-lg-6 h-25 title-col align-self-end">
                 <h1 class='title title-anim pt-4'>Tu negocio empieza acá.</h1>
@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="container-fluid">
-    <div class="container servicios-container ">
+    <section class="container servicios-container ">
         <div class="row">
             <div class="col-12 pb-3 black servicios-title">
                 <h2>
@@ -41,10 +41,10 @@
             </div>
 
         </div>
-    </div>
+    </section>
     </div>
    
-    <div class="container-fluid nosotros-fluid">
+    <section class="container-fluid nosotros-fluid">
         <div class="container nosotros-container white">
             <div class="row">  
                 <div class="col-12 col-md-6">
@@ -57,9 +57,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
    
-    <div class="container-fluid">
+    <section class="container-fluid">
         <div class="container contacto-container">
             <div class="row">
                 <div class="col-12">
@@ -87,14 +87,14 @@
                 <div class="col-12 col-md-6 contact-info-col">
                     <h3 class='py-2'>Limay S.A.S.</h3>
                     <p class='semibold'>Dirección: <span class='light'>Linares 1578</span></p>
-                    <p class='semibold'>Horarios: <span class='light'>Lunes a Sábados: 8hs a 14hs</span>
+                    <p class='semibold'>Horarios: <span class='light'>Lunes a Sábados: 8:00hs a 14:00hs</span>
                     <p class='semibold pb-4'>Teléfono: <span class='light'>299 - 5176476</span></p>
                     <a class='btn shadow-btn white bg-blue' href="tel:2990303456">LLAMAR</a> 
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid marcas-fluid">
+    </section>
+    <section class="container-fluid marcas-fluid">
         <div class="container marcas-container white">
        
             <div class="row ">
@@ -132,7 +132,7 @@
             </div>
        
        </div>
-    </div>
+    </section>
     </div>
     
     <footer class='container-fluid pt-4 bg-white'>
