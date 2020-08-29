@@ -7,7 +7,6 @@
                                     distribucion, distribuidora, frio, catering, eventos, negocios, almacenes, despensa,
                                     kiosco, restaurant">
     <meta name="description" content="Limay S.A.S, Mayorista de alimentos. Logística y transporte. Neuquén Capital">
-    <meta name='robots' content="nofollow">
     <!-- CSRF Token -->
     <script type="application/ld+json">
         {
@@ -25,10 +24,12 @@
           },
           "geo" : {
             "@type" : "GeoCoordinates",
+            "name" : "GeoCoordinates",
             "latitude" : -38.9720588,
             "longitude" : -68.0474376,
           },
           "openingHoursSpecification" : {
+            "name" : "OpeningHoursSpecification",
             "@type" : "OpeningHoursSpecification",
             "dayOfWeek" : [
                 "Monday",
