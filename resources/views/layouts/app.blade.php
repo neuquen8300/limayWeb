@@ -22,6 +22,7 @@
       },
       "openingHoursSpecification" : {
         "@type" : "OpeningHoursSpecification",
+        "name" : "OpeningHoursSpecification",
         "dayOfWeek" : {
           "@type" : "DayOfWeek",
           "name" : "Lunes a Sábados"
